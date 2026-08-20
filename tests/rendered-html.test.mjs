@@ -27,7 +27,7 @@ test("server-renders the KIND SITES landing page", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>KIND SITES — сайты с характером<\/title>/i);
-  assert.match(html, /Сайт, после которого/);
+  assert.match(html, /Сайты с характером/);
   assert.match(html, /Дарья/);
   assert.match(html, /Мария/);
   assert.match(html, /Richy/);
