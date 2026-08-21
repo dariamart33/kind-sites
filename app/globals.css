@@ -63,6 +63,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: .12em;
 }
 .hero-copy h1 { max-width: 1050px; margin-top: 20px; font-size: clamp(50px, 7.2vw, 108px); line-height: .9; text-wrap: balance; }
 .hero-lead { max-width: 590px; margin: 27px auto 28px; color: #c5b9c8; font-size: clamp(13px, 1.4vw, 16px); line-height: 1.55; }
@@ -113,8 +114,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .steps p { margin: 11px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
 
 .sphere-cta { position: relative; min-height: 560px; display: grid; place-items: center; overflow: hidden; background: #0a050b; text-align: center; }
-.sphere-small { position: absolute; left: 50%; bottom: -47%; width: min(710px, 93vw); aspect-ratio: 1; transform: translateX(-50%); border: 1px solid rgba(237, 197, 255, .7); border-radius: 50%; background: radial-gradient(circle at 50% 8%, rgba(238,192,255,.9), rgba(169,48,223,.62) 12%, rgba(58,12,72,.6) 38%, rgba(9,5,10,0) 67%); box-shadow: 0 -7px 38px rgba(205,73,255,.5), inset 0 14px 35px rgba(255,255,255,.08); animation: spherePulse 5s ease-in-out infinite alternate; }
-.sphere-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding: 70px 22px 220px; }
+.sphere-small { position: absolute; left: 50%; bottom: -36%; width: min(710px, 93vw); aspect-ratio: 1; transform: translateX(-50%); border: 1px solid rgba(237, 197, 255, .7); border-radius: 50%; background: radial-gradient(circle at 50% 8%, rgba(238,192,255,.9), rgba(169,48,223,.62) 12%, rgba(58,12,72,.6) 38%, rgba(9,5,10,0) 67%); box-shadow: 0 -7px 38px rgba(205,73,255,.5), inset 0 14px 35px rgba(255,255,255,.08); animation: spherePulse 5s ease-in-out infinite alternate; }
+.sphere-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding: 10px 22px 280px; }
 .sphere-copy h2 { margin: 20px 0 29px; font-size: clamp(42px, 5vw, 70px); line-height: .93; }
 
 .benefits { background: radial-gradient(circle at 13% 55%, rgba(113, 14, 145, .16), transparent 34%); }
@@ -222,6 +223,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .tag-a { top: 38%; }
   .tag-b { top: 18%; right: -2%; }
   .tag-c { bottom: 18%; }
+  .sphere-small { bottom: -42%; }
+  .sphere-copy { padding: 40px 22px 250px; }
   .split-heading { display: block; }
   .split-heading > p { margin-top: 25px; }
   .benefit-list { width: 100%; }
