@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-variable.ttf") format("truetype-variations");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
 :root {
   --ink: #09050a;
   --ink-2: #100713;
@@ -10,14 +18,15 @@
   --violet: #b100ff;
   --violet-soft: #d691ff;
   --line: rgba(255, 255, 255, .12);
+  --heading-gradient: linear-gradient(180deg, #f3e8fa 35%, #dab8ef 100%);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--ink); }
-body { margin: 0; overflow-x: hidden; background: var(--ink); color: var(--white); font-family: Arial, Helvetica, sans-serif; }
+body { margin: 0; overflow-x: hidden; background: var(--ink); color: var(--white); font-family: "Manrope", Arial, Helvetica, sans-serif; font-synthesis: none; }
 a { color: inherit; text-decoration: none; }
 button, summary { font: inherit; }
-em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+em { color: inherit; font-family: inherit; font-style: normal; font-weight: inherit; }
 .shell { width: min(1180px, calc(100% - 44px)); margin-inline: auto; }
 .section { position: relative; padding-block: clamp(90px, 11vw, 160px); }
 .kicker { margin: 0; color: var(--violet-soft); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
@@ -40,7 +49,21 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
 .ambient-one { top: -24vw; left: 4vw; background: #c000ff; }
 .ambient-two { top: 16vw; right: -24vw; background: #7b00ff; animation-delay: -5s; }
 .hero-copy { position: relative; z-index: 4; display: flex; flex-direction: column; align-items: center; margin-top: clamp(55px, 8vw, 115px); text-align: center; }
-.hero-copy h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.065em; }
+h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
+.hero-copy h1,
+.split-heading h2,
+.center-heading h2,
+.case-heading h2,
+.sphere-copy h2,
+.case-copy h3,
+.team-grid h3,
+.final-copy h2 {
+  color: #f3e8fa;
+  background-image: var(--heading-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .hero-copy h1 { max-width: 1050px; margin-top: 20px; font-size: clamp(50px, 7.2vw, 108px); line-height: .9; text-wrap: balance; }
 .hero-lead { max-width: 590px; margin: 27px auto 28px; color: #c5b9c8; font-size: clamp(13px, 1.4vw, 16px); line-height: 1.55; }
 .hero-stage { position: relative; z-index: 3; width: min(940px, 94vw); height: clamp(330px, 39vw, 580px); margin: -18px auto 0; perspective: 1200px; }
@@ -110,7 +133,7 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
 .case-copy h3 { margin-top: 26px; font-size: clamp(35px,4.1vw,61px); line-height: .93; }
 .case-copy p { max-width: 390px; margin: 24px 0 28px; color: var(--muted); font-size: 13px; line-height: 1.55; }
 .case-art { position: relative; overflow: hidden; background: radial-gradient(circle at 60% 55%, #a943d0, #3a1545 40%, #170b1c 75%); }
-.case-art > span { position: absolute; z-index: 2; left: 13%; top: 6%; color: rgba(255,255,255,.11); font-family: Georgia, serif; font-size: clamp(300px, 36vw, 530px); font-style: italic; line-height: .8; }
+.case-art > span { position: absolute; z-index: 2; left: 13%; top: 6%; color: rgba(255,255,255,.11); font-family: inherit; font-size: clamp(300px, 36vw, 530px); font-style: normal; font-weight: 300; line-height: .8; }
 .case-art > b { position: absolute; z-index: 4; right: 8%; bottom: 8%; color: white; font-size: clamp(45px, 6vw, 84px); line-height: .74; letter-spacing: -.08em; text-align: right; }
 .case-ring { position: absolute; z-index: 3; left: 47%; top: 44%; width: 66%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; box-shadow: 0 0 38px rgba(232,177,255,.4); animation: ringFloat 7s ease-in-out infinite alternate; }
 .ring-b { width: 46%; left: 28%; top: 21%; animation-delay: -3s; }
@@ -119,7 +142,7 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
 .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 900px; margin: 0 auto; }
 .team-grid article { position: relative; min-height: 360px; display: flex; flex-direction: column; justify-content: end; overflow: hidden; padding: 28px; border: 1px solid rgba(218,141,255,.2); border-radius: 14px; background: linear-gradient(145deg, #4d1560, #1b0d20 70%); }
 .team-grid article:last-child { background: linear-gradient(145deg, #2c1a30, #160c19 75%); }
-.portrait-letter { position: absolute; top: -18px; right: 4px; color: rgba(255,255,255,.13); font-family: Georgia, serif; font-size: 250px; font-style: italic; line-height: 1; }
+.portrait-letter { position: absolute; top: -18px; right: 4px; color: rgba(255,255,255,.13); font-family: inherit; font-size: 250px; font-style: normal; font-weight: 300; line-height: 1; }
 .team-grid div { position: relative; z-index: 2; }
 .team-grid p { margin: 0 0 18px; color: #d8c9dc; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .team-grid h3 { font-size: clamp(38px, 4vw, 60px); }
@@ -139,7 +162,8 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
 
 .faq { background: #f6f4f7; color: #160e18; }
 .faq .kicker { color: #9139ae; }
-.faq em { color: #9c3bbf; }
+.faq .center-heading h2 { color: #160e18; background: none; -webkit-text-fill-color: currentColor; }
+.faq em { color: #9c3bbf; -webkit-text-fill-color: currentColor; }
 .faq-list { width: min(780px, calc(100% - 44px)); margin: 0 auto; }
 .faq details { margin-top: 8px; border-radius: 10px; background: white; }
 .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; cursor: pointer; list-style: none; font-size: 13px; font-weight: 700; }

@@ -11,6 +11,7 @@ test("GitHub Pages output is ready for the custom domain", async () => {
   assert.match(html, /39 000 ₽/);
   assert.match(html, /69 000 ₽/);
   assert.match(html, /от 100 000 ₽/);
+  await access(new URL("../docs/fonts/manrope-variable.ttf", import.meta.url));
 
   const localAssets = [...html.matchAll(/(?:href|src)="(\/_next\/[^"?]+|\/[^"?]+\.(?:svg|png|webp))"/g)]
     .map(([, path]) => new URL(`../docs${path}`, import.meta.url));
