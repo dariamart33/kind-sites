@@ -27,10 +27,13 @@ test("server-renders the KIND SITES landing page", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>KIND SITES — сайты с характером<\/title>/i);
-  assert.match(html, /Сайты с характером/);
+  assert.match(html, /Сайты, которые/);
+  assert.match(html, /Анимированная монограмма KIND SITES/);
+  assert.match(html, /glass-k/);
+  assert.match(html, /orbit-one/);
   assert.match(html, /Дарья/);
   assert.match(html, /Мария/);
-  assert.match(html, /Richy/);
+  assert.match(html, /RICHY/);
   assert.match(html, /og\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });

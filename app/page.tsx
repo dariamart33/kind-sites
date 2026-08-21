@@ -1,3 +1,27 @@
+const services = [
+  { icon: "✦", title: "Структура и смыслы", text: "Собираем логику страницы и помогаем сформулировать главное без канцелярита." },
+  { icon: "◌", title: "Дизайн с характером", text: "Создаём визуальный язык под ваш бренд, а не подгоняем бизнес под готовый шаблон." },
+  { icon: "↗", title: "Разработка", text: "Собираем быстрый адаптивный сайт, который одинаково хорошо работает на телефоне и компьютере." },
+  { icon: "◎", title: "Анимация", text: "Добавляем движение там, где оно усиливает историю и помогает вести взгляд пользователя." },
+  { icon: "⌁", title: "Запуск", text: "Подключаем домен, формы и аналитику, проверяем основные сценарии перед публикацией." },
+  { icon: "＋", title: "Поддержка", text: "После запуска остаёмся рядом: объясняем, как всё устроено, и помогаем с обновлениями." },
+];
+
+const stats = [
+  { value: "01", label: "команда, которая ведёт проект от идеи до запуска" },
+  { value: "100%", label: "адаптация каждого проекта для мобильных устройств" },
+  { value: "0", label: "скрытых платежей после согласования сметы" },
+  { value: "7+", label: "дней — срок разработки компактного лендинга" },
+];
+
+const steps = [
+  { number: "01", title: "Знакомимся", text: "Коротко обсуждаем бизнес, аудиторию и задачу будущего сайта." },
+  { number: "02", title: "Собираем основу", text: "Продумываем структуру, сценарий страницы и черновые тексты." },
+  { number: "03", title: "Находим образ", text: "Показываем визуальное направление, цвет, типографику и настроение." },
+  { number: "04", title: "Делаем живым", text: "Собираем сайт, добавляем анимацию, адаптивность и нужные подключения." },
+  { number: "05", title: "Запускаем", text: "Вместе проверяем результат, подключаем домен и публикуем проект." },
+];
+
 const packages = [
   {
     name: "Старт",
@@ -20,72 +44,109 @@ const packages = [
   },
 ];
 
-const questions = [
-  "Сколько длится разработка?",
-  "Поможете с текстом и структурой?",
-  "Можно начать без готового фирменного стиля?",
-  "Что входит в публикацию сайта?",
-  "Сможем ли мы сами менять информацию?",
+const benefits = [
+  { symbol: "K", title: "Не шаблон", text: "Каждый проект начинается с вашей задачи и собирается вокруг неё." },
+  { symbol: "01", title: "Один контакт", text: "Вы всегда понимаете, кому написать и что сейчас происходит с проектом." },
+  { symbol: "↗", title: "Без пропасти", text: "Показываем промежуточный результат и не исчезаем до даты сдачи." },
+  { symbol: "Aa", title: "Помощь с текстом", text: "Не ждём идеальных материалов — помогаем сделать их понятными." },
+  { symbol: "∞", title: "Можно расти", text: "Закладываем аккуратную основу, которую можно развивать дальше." },
+  { symbol: "✓", title: "Готово к запуску", text: "Передаём не макет, а опубликованный и проверенный сайт." },
 ];
+
+const questions = [
+  { q: "Сколько длится разработка?", a: "Компактный лендинг обычно занимает от 7 дней. Более крупный сайт — от 14 дней. Точный срок фиксируем после короткого знакомства с задачей." },
+  { q: "Поможете с текстом и структурой?", a: "Да. Мы задаём вопросы, собираем смысловой каркас и помогаем превратить ваши материалы в ясный текст для сайта." },
+  { q: "Можно начать без готового фирменного стиля?", a: "Можно. Подберём рабочее визуальное направление для сайта: цвета, шрифты и характер графики." },
+  { q: "Что входит в публикацию сайта?", a: "Подключение домена, базовая аналитика, проверка адаптивности, форм и основных ссылок. Дополнительные интеграции согласуем заранее." },
+  { q: "Сможем ли мы сами менять информацию?", a: "Зависит от выбранной технологии и объёма изменений. Если самостоятельное редактирование важно, заложим это в решение до старта." },
+];
+
+function ArrowButton({ children, href, secondary = false }: { children: React.ReactNode; href: string; secondary?: boolean }) {
+  return <a className={`pill-button ${secondary ? "pill-button-secondary" : ""}`} href={href}>{children}<span aria-hidden="true">↗</span></a>;
+}
 
 export default function Home() {
   return (
     <main>
       <section className="hero" id="top">
-        <nav className="nav" aria-label="Основная навигация">
-          <a className="brand" href="#top" aria-label="KIND SITES — на главную">KIND<span>•</span>SITES</a>
-          <div className="nav-links"><a href="#formats">Тарифы</a><a href="#process">Процесс</a><a href="#team">О нас</a></div>
-          <a className="nav-contact" href="#contact">Обсудить проект <b>↗</b></a>
+        <div className="ambient ambient-one" /><div className="ambient ambient-two" />
+        <nav className="nav shell" aria-label="Основная навигация">
+          <a className="brand" href="#top" aria-label="KIND SITES — на главную"><span className="brand-mark">K</span>KIND SITES</a>
+          <div className="nav-links"><a href="#services">Услуги</a><a href="#prices">Тарифы</a><a href="#about">О нас</a></div>
+          <ArrowButton href="#contact" secondary>Обсудить проект</ArrowButton>
         </nav>
 
-        <div className="hero-copy">
-          <p className="eyebrow">Небольшая digital-студия · Москва / онлайн</p>
-          <h1>Сайты с характером.<br /><i>Понятные</i> для людей.</h1>
-          <p>Собираем выразительные сайты для небольшого бизнеса, экспертов и брендов — от первой идеи до запуска.</p>
-          <div className="hero-actions"><a className="button button-violet" href="#formats">Выбрать формат <span>→</span></a><a className="ghost-link" href="#process">Как мы работаем</a></div>
+        <div className="hero-copy shell">
+          <p className="kicker">Digital-студия Дарьи Март</p>
+          <h1>Сайты, которые<br /><em>хочется рассматривать.</em></h1>
+          <p className="hero-lead">Придумываем, проектируем и запускаем выразительные сайты для небольшого бизнеса, экспертов и брендов.</p>
+          <ArrowButton href="#prices">Выбрать формат</ArrowButton>
         </div>
 
-        <div className="hero-art" aria-label="Декоративная композиция KIND SITES">
-          <span className="hero-tag tag-one">дизайн, тексты, разработка</span>
-          <span className="hero-tag tag-two">без лишней сложности ✦</span>
-          <div className="glass-letter letter-k">K</div><div className="glass-letter letter-s">S</div>
-          <div className="purple-haze" />
+        <div className="hero-stage" aria-label="Анимированная монограмма KIND SITES">
+          <div className="stage-glow" />
+          <div className="glass-word" aria-hidden="true"><span className="glass-k" data-letter="K">K</span><span className="glass-s" data-letter="S">S</span></div>
+          <span className="float-tag tag-a"><b>✦</b> дизайн без шаблонов</span>
+          <span className="float-tag tag-b"><b>↗</b> запуск под ключ</span>
+          <span className="float-tag tag-c"><b>✓</b> понятный процесс</span>
+          <div className="orbit orbit-one" /><div className="orbit orbit-two" />
         </div>
-        <div className="hero-footer"><span>Сайт — это разговор с вашим клиентом</span><span>01 / 05</span></div>
+
+        <div className="ticker" aria-label="Направления работы"><div>
+          <span>Лендинги</span><i>✦</i><span>Сайты компаний</span><i>✦</i><span>Портфолио</span><i>✦</i><span>Промо-страницы</span><i>✦</i>
+          <span>Лендинги</span><i>✦</i><span>Сайты компаний</span><i>✦</i><span>Портфолио</span><i>✦</i><span>Промо-страницы</span><i>✦</i>
+        </div></div>
       </section>
 
-      <section className="statement">
-        <p className="eyebrow">Зачем KIND SITES</p>
-        <p className="statement-text">Не делаем «как у всех». Находим <i>главное</i> в вашем деле и превращаем его в сайт, который хочется открыть ещё раз.</p>
-      </section>
-
-      <section className="packages" id="formats">
-        <div className="center-heading"><p className="eyebrow">Простые тарифы</p><h2>Ясный объём.<br /><i>Честная</i> цена.</h2><p>Выбираем подходящий старт, а всё нестандартное считаем отдельно и заранее.</p></div>
-        <div className="pricing-grid">
-          {packages.map((item) => <article className={`price-card ${item.featured ? "price-card-featured" : ""}`} key={item.name}>
-            <span className="card-mark">K</span><h3>{item.name}</h3><p>{item.note}</p><div className="price">{item.price}</div>
-            <a className="card-button" href="#contact">Выбрать <span>→</span></a>
-            <ul>{item.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
-          </article>)}
+      <section className="section services shell reveal" id="services">
+        <div className="section-intro split-heading"><div><p className="kicker soft-pill">Что мы делаем</p><h2>Собираем сайт<br /><em>целиком.</em></h2></div><p>От первой мысли и текста до домена, аналитики и кнопки «опубликовать».</p></div>
+        <div className="layered-panel">
+          <div className="panel-shadow shadow-one" /><div className="panel-shadow shadow-two" />
+          <div className="panel-head"><h3>Разработка под ключ</h3><span>06 направлений</span></div>
+          <div className="service-grid">{services.map((item) => <article key={item.title}><span className="service-icon">{item.icon}</span><h4>{item.title}</h4><p>{item.text}</p></article>)}</div>
         </div>
       </section>
 
-      <section className="case-study">
-        <p className="eyebrow">Недавний проект</p>
-        <div className="case-layout"><div><h2>Richy<br /><i>Kind Eyes</i></h2><p>Личный сайт-портрет мейн-куна Риччи: история, характер, фотографии и QR-визитка.</p><a className="button button-violet" href="https://richykindeyespussycat.ru/" target="_blank" rel="noreferrer">Открыть кейс <span>↗</span></a></div><div className="case-visual"><span>RICHY<br />KIND<br />EYES</span><div className="case-orb" /></div></div>
+      <section className="section impact reveal">
+        <div className="shell"><div className="center-heading"><p className="kicker soft-pill">В цифрах</p><h2>Понятный процесс.<br /><em>Предсказуемый результат.</em></h2><p>Без громких обещаний: только конкретный объём, прозрачные этапы и заранее согласованная стоимость.</p></div>
+          <div className="stats-grid">{stats.map((item) => <article key={item.value}><strong>{item.value}</strong><p>{item.label}</p></article>)}</div>
+        </div>
       </section>
 
-      <section className="process" id="process">
-        <div className="section-heading"><p className="eyebrow">Как это происходит</p><h2>Спокойно,<br /><i>по шагам.</i></h2></div>
-        <ol><li><span>01</span><p>Созваниваемся на 20 минут и понимаем, кому и зачем нужен сайт.</p></li><li><span>02</span><p>Дарья собирает структуру, визуальное направление и первые тексты.</p></li><li><span>03</span><p>Показываем живой черновик, собираем правки и доводим детали.</p></li><li><span>04</span><p>Тестируем, подключаем домен и передаём вам готовый сайт.</p></li></ol>
+      <section className="section process shell reveal" id="process">
+        <div className="center-heading"><p className="kicker soft-pill">Как это работает</p><h2>От идеи до сайта<br /><em>за пять шагов.</em></h2></div>
+        <div className="steps">{steps.map((step) => <article key={step.number}><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></article>)}</div>
       </section>
 
-      <section className="team" id="team"><div className="team-intro"><p className="eyebrow">Команда KIND SITES</p><h2>Небольшая команда.<br /><i>Личное</i> внимание.</h2></div><div className="people"><article className="person person-darya"><span className="person-initial">Д</span><p>Основательница · креативный директор</p><h3>Дарья<br />Март</h3></article><article className="person person-maria"><span className="person-initial">М</span><p>Менеджер проектов</p><h3>Мария</h3></article></div></section>
+      <section className="sphere-cta reveal"><div className="sphere sphere-small" /><div className="sphere-copy"><p className="kicker soft-pill">Начать просто</p><h2>Расскажите, какой сайт<br />вам нужен</h2><ArrowButton href="#contact">Обсудить идею</ArrowButton></div></section>
 
-      <section className="faq"><div className="center-heading"><p className="eyebrow">Коротко о важном</p><h2>Вопросы<br /><i>без неловкости.</i></h2></div><div className="faq-list">{questions.map((question) => <div className="faq-row" key={question}><span>{question}</span><b>+</b></div>)}</div></section>
+      <section className="section benefits shell reveal">
+        <div className="split-heading"><div><p className="kicker soft-pill">Почему KIND SITES</p><h2>Красиво снаружи.<br /><em>Продуманно внутри.</em></h2></div><p>Дизайн должен производить впечатление, а сайт — помогать человеку сделать следующий шаг.</p></div>
+        <div className="benefit-list">{benefits.map((item) => <article key={item.title}><span className="metal-icon">{item.symbol}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div>
+      </section>
 
-      <section className="contact" id="contact"><div className="contact-orb" /><p className="eyebrow">Первый шаг — самый простой</p><h2>Давайте сделаем<br /><i>что-то своё.</i></h2><p>Мария задаст несколько вопросов и поможет выбрать подходящий формат.</p><a className="button button-violet" href="mailto:hello@kindsites.ru?subject=Проект%20для%20KIND%20SITES">Написать Марии <span>↗</span></a></section>
-      <footer><a className="brand" href="#top">KIND<span>•</span>SITES</a><span>© 2026 Дарья Март</span><span>Сайты с характером.</span></footer>
+      <section className="section case-study reveal">
+        <div className="shell"><div className="case-heading"><p className="kicker soft-pill">Первый кейс</p><h2>История, которая<br /><em>стала сайтом.</em></h2></div>
+          <div className="case-card"><div className="case-copy"><span>01 / RICHY KIND EYES</span><h3>Сайт-портрет<br />мейн-куна Риччи</h3><p>Личная история, характер, фотографии и QR-визитка — в одном тёплом цифровом альбоме.</p><ArrowButton href="https://richykindeyespussycat.ru/">Открыть проект</ArrowButton></div><div className="case-art" aria-hidden="true"><span>R</span><div className="case-ring ring-a" /><div className="case-ring ring-b" /><b>KIND<br />EYES</b></div></div>
+        </div>
+      </section>
+
+      <section className="section team shell reveal" id="about">
+        <div className="center-heading"><p className="kicker soft-pill">Команда</p><h2>Небольшая студия.<br /><em>Личное внимание.</em></h2></div>
+        <div className="team-grid"><article><span className="portrait-letter">Д</span><div><p>Основательница · креативный директор</p><h3>Дарья Март</h3></div></article><article><span className="portrait-letter">М</span><div><p>Менеджер проектов</p><h3>Мария</h3></div></article></div>
+      </section>
+
+      <section className="section pricing reveal" id="prices">
+        <div className="shell"><div className="center-heading"><p className="kicker soft-pill">Тарифы</p><h2>Простая цена.<br /><em>Серьёзный результат.</em></h2><p>Выбираем подходящий старт. Всё нестандартное считаем отдельно и согласовываем до начала работ.</p></div>
+          <div className="pricing-grid">{packages.map((item, index) => <article className={`price-card ${item.featured ? "featured" : ""}`} key={item.name}><span className="plan-index">0{index + 1}</span><h3>{item.name}</h3><p>{item.note}</p><div className="price">{item.price}</div><ArrowButton href="#contact" secondary={!item.featured}>Выбрать</ArrowButton><ul>{item.details.map((detail) => <li key={detail}>{detail}</li>)}</ul></article>)}</div>
+        </div>
+      </section>
+
+      <section className="section faq reveal"><div className="center-heading"><p className="kicker soft-pill">FAQ</p><h2>Ответы на<br /><em>частые вопросы.</em></h2></div><div className="faq-list">{questions.map((item) => <details key={item.q}><summary>{item.q}<span aria-hidden="true">+</span></summary><p>{item.a}</p></details>)}</div></section>
+
+      <section className="final-cta" id="contact"><div className="question-mark question-left">?</div><div className="question-mark question-right">?</div><div className="final-sphere" /><div className="final-copy"><p className="kicker soft-pill">Есть идея?</p><h2>Давайте сделаем<br />ей хороший сайт.</h2><p>Мария задаст несколько вопросов и поможет выбрать подходящий формат.</p><ArrowButton href="mailto:hello@kindsites.ru?subject=Проект%20для%20KIND%20SITES">Написать Марии</ArrowButton></div></section>
+
+      <footer className="footer shell"><a className="brand" href="#top"><span className="brand-mark">K</span>KIND SITES</a><div><p>Навигация</p><a href="#services">Услуги</a><a href="#prices">Тарифы</a><a href="#about">О нас</a></div><div><p>Контакты</p><a href="mailto:hello@kindsites.ru">hello@kindsites.ru</a><span>Москва · работаем онлайн</span></div><span className="copyright">© 2026 Дарья Март</span></footer>
     </main>
   );
 }
