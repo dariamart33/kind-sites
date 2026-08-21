@@ -12,7 +12,7 @@ test("GitHub Pages output is ready for the custom domain", async () => {
   assert.match(html, /69 000 ₽/);
   assert.match(html, /от 100 000 ₽/);
 
-  const localAssets = [...html.matchAll(/(?:href|src)="(\/_next\/[^"?]+|\/[^"?]+\.(?:svg|png))"/g)]
+  const localAssets = [...html.matchAll(/(?:href|src)="(\/_next\/[^"?]+|\/[^"?]+\.(?:svg|png|webp))"/g)]
     .map(([, path]) => new URL(`../docs${path}`, import.meta.url));
   assert.ok(localAssets.length > 0);
   await Promise.all(localAssets.map((path) => access(path)));

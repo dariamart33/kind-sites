@@ -44,13 +44,10 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
 .hero-copy h1 { max-width: 1050px; margin-top: 20px; font-size: clamp(50px, 7.2vw, 108px); line-height: .9; text-wrap: balance; }
 .hero-lead { max-width: 590px; margin: 27px auto 28px; color: #c5b9c8; font-size: clamp(13px, 1.4vw, 16px); line-height: 1.55; }
 .hero-stage { position: relative; z-index: 3; width: min(940px, 94vw); height: clamp(330px, 39vw, 580px); margin: -18px auto 0; perspective: 1200px; }
-.stage-glow { position: absolute; inset: 23% 4% -5%; background: radial-gradient(ellipse, rgba(41, 113, 255, .38), rgba(119, 35, 165, .18) 42%, transparent 70%); filter: blur(32px); animation: glowBreath 6s ease-in-out infinite alternate; }
-.glass-word { position: absolute; inset: 11% 4% 0; transform-style: preserve-3d; filter: drop-shadow(0 0 5px rgba(235, 248, 255, .78)) drop-shadow(0 19px 28px rgba(0, 36, 104, .62)); }
-.glass-word span { position: absolute; top: 0; display: block; color: transparent; font-size: clamp(250px, 37vw, 560px); font-weight: 900; line-height: .8; letter-spacing: -.24em; -webkit-text-stroke: 2px rgba(223, 242, 255, .95); background: linear-gradient(112deg, #06142f 0%, #1267d4 8%, #d9f3ff 16%, #ffffff 23%, #84baff 31%, #104c9d 39%, #fff9df 47%, #e7a52b 51%, #fffef5 55%, #3b8ce9 65%, #d9f5ff 74%, #ffffff 81%, #0d55bb 91%, #07152e 100%); background-size: 280% 100%; -webkit-background-clip: text; background-clip: text; text-shadow: 0 0 2px #fff, 0 0 10px rgba(87, 172, 255, .85), 12px 22px 0 rgba(10, 55, 123, .42), 26px 43px 0 rgba(3, 15, 39, .52); mix-blend-mode: screen; will-change: transform, background-position; }
-.glass-word span::before { content: attr(data-letter); position: absolute; inset: 0; color: transparent; background: linear-gradient(106deg, transparent 24%, rgba(255,255,255,.1) 34%, #fff 43%, rgba(255,215,118,.96) 47%, #fff 51%, rgba(96,185,255,.45) 57%, transparent 68%); background-size: 320% 100%; -webkit-background-clip: text; background-clip: text; filter: blur(.35px); mix-blend-mode: screen; animation: specularSweep 3.6s ease-in-out infinite; }
-.glass-word span::after { content: attr(data-letter); position: absolute; inset: 0; color: transparent; -webkit-text-stroke: 8px rgba(24, 100, 199, .24); filter: blur(2px); transform: translateZ(-40px); text-shadow: 7px 10px 0 rgba(181, 224, 255, .22), 20px 33px 0 rgba(4, 24, 63, .58); }
-.glass-k { left: 6%; transform: rotateY(13deg) rotateZ(-8deg) skewX(-9deg); animation: letterK 7s ease-in-out infinite alternate, chromeFlow 5.4s linear infinite; }
-.glass-s { right: 8%; transform: rotateY(-11deg) rotateZ(8deg) skewX(-7deg); animation: letterS 8s ease-in-out infinite alternate, chromeFlow 6.2s linear infinite reverse; }
+.stage-glow { position: absolute; inset: 23% 4% -5%; background: radial-gradient(ellipse, rgba(20, 105, 255, .46), rgba(95, 24, 153, .2) 43%, transparent 70%); filter: blur(32px); animation: glowBreath 6s ease-in-out infinite alternate; }
+.chrome-art { position: absolute; inset: -13% -7% -2%; overflow: hidden; transform: translate3d(0, 0, 0) rotateX(1deg); transform-style: preserve-3d; filter: drop-shadow(0 20px 28px rgba(0, 17, 55, .72)); animation: chromeFloat 7s ease-in-out infinite alternate; }
+.chrome-art img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; filter: brightness(.98) contrast(1.04) saturate(1.04); animation: chromeLuster 4.8s ease-in-out infinite; }
+.chrome-art::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: url("/ks-chrome-cutout-v1.webp") center bottom / contain no-repeat; filter: brightness(1.7) contrast(1.16) saturate(1.14); mix-blend-mode: screen; opacity: .74; clip-path: polygon(-28% 0, -10% 0, 9% 100%, -9% 100%); animation: chromeImageSweep 4.4s ease-in-out infinite; }
 .orbit { position: absolute; z-index: -1; left: 50%; top: 49%; border: 1px solid rgba(213, 142, 255, .18); border-radius: 50%; transform: translate(-50%, -50%) rotateX(72deg); }
 .orbit-one { width: 78%; aspect-ratio: 1.7; animation: orbitSpin 18s linear infinite; }
 .orbit-two { width: 58%; aspect-ratio: 1.55; animation: orbitSpinReverse 14s linear infinite; }
@@ -172,10 +169,9 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
 
 @keyframes ambientShift { to { transform: translate3d(10vw, 7vw, 0) scale(1.18); opacity: .29; } }
 @keyframes glowBreath { to { transform: scale(1.08); opacity: .75; } }
-@keyframes letterK { to { transform: translate3d(7px,-18px,35px) rotateY(5deg) rotateZ(-5deg) skewX(-9deg); } }
-@keyframes letterS { to { transform: translate3d(-9px,16px,48px) rotateY(-3deg) rotateZ(4deg) skewX(-7deg); } }
-@keyframes chromeFlow { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
-@keyframes specularSweep { 0%, 16% { background-position: 125% 50%; opacity: .2; } 47% { opacity: 1; } 78%, 100% { background-position: -70% 50%; opacity: .34; } }
+@keyframes chromeFloat { to { transform: translate3d(0, -17px, 32px) rotateX(-1deg) rotateZ(.6deg); } }
+@keyframes chromeLuster { 0%, 100% { filter: brightness(.94) contrast(1.04) saturate(1); } 50% { filter: brightness(1.08) contrast(1.1) saturate(1.16); } }
+@keyframes chromeImageSweep { 0%, 14% { clip-path: polygon(-28% 0, -10% 0, 9% 100%, -9% 100%); opacity: .18; } 49% { opacity: .84; } 82%, 100% { clip-path: polygon(109% 0, 127% 0, 146% 100%, 128% 100%); opacity: .2; } }
 @keyframes tagFloat { to { transform: translateY(-12px) rotate(-1deg); } }
 @keyframes tickerMove { to { transform: translateX(-50%); } }
 @keyframes orbitSpin { to { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); } }
@@ -206,10 +202,7 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
   .hero-copy { margin-top: 54px; }
   .hero-copy h1 { font-size: clamp(46px, 13vw, 72px); }
   .hero-stage { height: 365px; margin-top: 6px; }
-  .glass-word { inset-inline: -10%; }
-  .glass-word span { font-size: clamp(245px, 72vw, 390px); }
-  .glass-k { left: 4%; }
-  .glass-s { right: 7%; }
+  .chrome-art { inset-inline: -15%; }
   .tag-a { top: 38%; }
   .tag-b { top: 18%; right: -2%; }
   .tag-c { bottom: 18%; }
@@ -228,8 +221,7 @@ em { color: #eadbf0; font-family: Georgia, "Times New Roman", serif; font-weight
   .nav .pill-button { font-size: 0; }
   .hero-lead { font-size: 13px; }
   .hero-stage { height: 325px; }
-  .glass-word { inset-inline: -17%; top: 18%; }
-  .glass-word span { font-size: 265px; }
+  .chrome-art { inset: 8% -23% -3%; }
   .float-tag { font-size: 9px; padding: 8px 10px; }
   .tag-a { left: -4%; }
   .tag-b { right: -4%; }

@@ -85,7 +85,10 @@ export default function Home() {
 
         <div className="hero-stage" aria-label="Анимированная монограмма KIND SITES">
           <div className="stage-glow" />
-          <div className="glass-word" aria-hidden="true"><span className="glass-k" data-letter="K">K</span><span className="glass-s" data-letter="S">S</span></div>
+          <div className="chrome-art" aria-hidden="true">
+            {/* eslint-disable-next-line @next/next/no-img-element -- GitHub Pages serves the pre-compressed hero asset directly. */}
+            <img src="/ks-chrome-cutout-v1.webp" alt="" />
+          </div>
           <span className="float-tag tag-a"><b>✦</b> дизайн без шаблонов</span>
           <span className="float-tag tag-b"><b>↗</b> запуск под ключ</span>
           <span className="float-tag tag-c"><b>✓</b> понятный процесс</span>
