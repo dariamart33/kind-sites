@@ -92,7 +92,6 @@ export default function Home() {
           <span className="float-tag tag-a"><b>✦</b> дизайн без шаблонов</span>
           <span className="float-tag tag-b"><b>↗</b> запуск под ключ</span>
           <span className="float-tag tag-c"><b>✓</b> понятный процесс</span>
-          <div className="orbit orbit-one" /><div className="orbit orbit-two" />
         </div>
 
         <div className="ticker" aria-label="Направления работы"><div>
