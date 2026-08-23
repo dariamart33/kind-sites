@@ -145,16 +145,14 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .impact-card-slot:hover .impact-sheet { translate: 0 calc(-1 * var(--impact-card-lift)); box-shadow: inset 0 1px rgba(255,255,255,.12), 0 46px 110px rgba(0,0,0,.46); }
 }
 
-.impact-slide.is-entering.is-next .impact-sheet { animation: impactSheetInNext .72s cubic-bezier(.22,.75,.22,1) both; }
-.impact-slide.is-leaving.is-next .impact-sheet { animation: impactSheetOutNext .72s cubic-bezier(.55,.05,.75,.25) both; }
-.impact-slide.is-entering.is-previous .impact-sheet { animation: impactSheetInPrevious .72s cubic-bezier(.22,.75,.22,1) both; }
-.impact-slide.is-leaving.is-previous .impact-sheet { animation: impactSheetOutPrevious .72s cubic-bezier(.55,.05,.75,.25) both; }
-.impact-slide.is-entering .impact-metric { animation: impactSideIn .58s cubic-bezier(.22,.75,.22,1) both; }
-.impact-slide.is-entering .impact-metric:nth-child(2) { animation-delay: .06s; }
-.impact-slide.is-entering .impact-metric:nth-child(3) { animation-delay: .12s; }
-.impact-slide.is-leaving .impact-metric { animation: impactSideOut .42s ease both; }
-.impact-slide.is-entering .impact-quote { animation: impactQuoteIn .62s .1s cubic-bezier(.22,.75,.22,1) both; }
-.impact-slide.is-leaving .impact-quote { animation: impactQuoteOut .38s ease both; }
+.impact-slide.is-entering.is-next .impact-sheet { animation: impactSheetInNext .48s ease-out both; }
+.impact-slide.is-leaving.is-next .impact-sheet { animation: impactSheetOutNext .48s ease-in both; }
+.impact-slide.is-entering.is-previous .impact-sheet { animation: impactSheetInPrevious .48s ease-out both; }
+.impact-slide.is-leaving.is-previous .impact-sheet { animation: impactSheetOutPrevious .48s ease-in both; }
+.impact-slide.is-entering .impact-metric { animation: impactSideIn .42s ease-out both; }
+.impact-slide.is-leaving .impact-metric { animation: impactSideOut .38s ease-in both; }
+.impact-slide.is-entering .impact-quote { animation: impactQuoteIn .44s ease-out both; }
+.impact-slide.is-leaving .impact-quote { animation: impactQuoteOut .38s ease-in both; }
 
 .process { background: var(--ink); }
 .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
@@ -239,14 +237,14 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .footer div a:hover { color: var(--violet-soft); }
 .copyright { align-self: end; }
 
-@keyframes impactSheetInNext { from { opacity: 0; transform: translateY(210px) scale(.965); filter: blur(9px); } to { opacity: 1; transform: none; filter: none; } }
-@keyframes impactSheetOutNext { from { opacity: 1; transform: none; filter: none; } to { opacity: 0; transform: translateY(-260px) scale(.97); filter: blur(10px); } }
-@keyframes impactSheetInPrevious { from { opacity: 0; transform: translateY(-210px) scale(.965); filter: blur(9px); } to { opacity: 1; transform: none; filter: none; } }
-@keyframes impactSheetOutPrevious { from { opacity: 1; transform: none; filter: none; } to { opacity: 0; transform: translateY(260px) scale(.97); filter: blur(10px); } }
-@keyframes impactSideIn { from { opacity: 0; transform: translateY(34px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
-@keyframes impactSideOut { to { opacity: 0; transform: translateY(-30px); filter: blur(5px); } }
-@keyframes impactQuoteIn { from { opacity: 0; transform: translate(28px, 18px) rotate(3deg); filter: blur(5px); } to { opacity: 1; transform: rotate(1.3deg); filter: none; } }
-@keyframes impactQuoteOut { to { opacity: 0; transform: translateY(-34px) rotate(-1deg); filter: blur(5px); } }
+@keyframes impactSheetInNext { from { opacity: 0; transform: translateY(18px) scale(.995); } to { opacity: 1; transform: none; } }
+@keyframes impactSheetOutNext { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-14px) scale(.997); } }
+@keyframes impactSheetInPrevious { from { opacity: 0; transform: translateY(-18px) scale(.995); } to { opacity: 1; transform: none; } }
+@keyframes impactSheetOutPrevious { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(14px) scale(.997); } }
+@keyframes impactSideIn { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+@keyframes impactSideOut { to { opacity: 0; transform: translateY(-7px); } }
+@keyframes impactQuoteIn { from { opacity: 0; transform: translate(7px, 5px) rotate(.7deg); } to { opacity: 1; transform: rotate(.45deg); } }
+@keyframes impactQuoteOut { to { opacity: 0; transform: translateY(-7px) rotate(.2deg); } }
 @keyframes ambientShift { to { transform: translate3d(10vw, 7vw, 0) scale(1.18); opacity: .29; } }
 @keyframes glowBreath { to { transform: scale(1.08); opacity: .75; } }
 @keyframes chromeFloat { to { transform: translate3d(0, -17px, 32px) rotateX(-1deg) rotateZ(.6deg); } }
