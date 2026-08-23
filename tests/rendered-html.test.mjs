@@ -32,6 +32,9 @@ test("server-renders the KIND SITES landing page", async () => {
   assert.match(html, /chrome-art/);
   assert.match(html, /ks-purple-glass-v2\.webp/);
   assert.doesNotMatch(html, /orbit-(?:one|two)/);
+  assert.match(html, /Кейсы KIND SITES/);
+  assert.match(html, /Одна команда → от идеи до запуска/);
+  assert.match(html, /Следующий кейс/);
   assert.match(html, /Дарья/);
   assert.match(html, /Мария/);
   assert.match(html, /RICHY/);

@@ -1,3 +1,5 @@
+import { ImpactCarousel } from "./ImpactCarousel";
+
 const services = [
   { icon: "✦", title: "Структура и смыслы", text: "Собираем логику страницы и помогаем сформулировать главное без канцелярита." },
   { icon: "◌", title: "Дизайн с характером", text: "Создаём визуальный язык под ваш бренд, а не подгоняем бизнес под готовый шаблон." },
@@ -5,13 +7,6 @@ const services = [
   { icon: "◎", title: "Анимация", text: "Добавляем движение там, где оно усиливает историю и помогает вести взгляд пользователя." },
   { icon: "⌁", title: "Запуск", text: "Подключаем домен, формы и аналитику, проверяем основные сценарии перед публикацией." },
   { icon: "＋", title: "Поддержка", text: "После запуска остаёмся рядом: объясняем, как всё устроено, и помогаем с обновлениями." },
-];
-
-const stats = [
-  { value: "01", label: "команда, которая ведёт проект от идеи до запуска" },
-  { value: "100%", label: "адаптация каждого проекта для мобильных устройств" },
-  { value: "0", label: "скрытых платежей после согласования сметы" },
-  { value: "7+", label: "дней — срок разработки компактного лендинга" },
 ];
 
 const steps = [
@@ -109,11 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section impact reveal">
-        <div className="shell"><div className="center-heading"><p className="kicker soft-pill">В цифрах</p><h2>Понятный процесс.<br /><em>Предсказуемый результат.</em></h2><p>Без громких обещаний: только конкретный объём, прозрачные этапы и заранее согласованная стоимость.</p></div>
-          <div className="stats-grid">{stats.map((item) => <article key={item.value}><strong>{item.value}</strong><p>{item.label}</p></article>)}</div>
-        </div>
-      </section>
+      <ImpactCarousel />
 
       <section className="section process shell reveal" id="process">
         <div className="center-heading"><p className="kicker soft-pill">Как это работает</p><h2>От идеи до сайта<br /><em>за пять шагов.</em></h2></div>
