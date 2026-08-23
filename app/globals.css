@@ -116,7 +116,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .impact-metric { display: flex; min-height: 125px; flex-direction: column; justify-content: space-between; padding: 18px 17px 16px; border: 1px solid rgba(226, 183, 255, .18); border-radius: 18px; background: linear-gradient(145deg, rgba(20, 12, 23, .94), rgba(12, 8, 14, .9)); box-shadow: inset 0 1px rgba(255,255,255,.03), 0 24px 70px rgba(0,0,0,.22); }
 .impact-metric strong { color: #e5b7f5; font-size: clamp(36px, 2.7vw, 48px); font-weight: 400; line-height: 1; letter-spacing: -.055em; }
 .impact-metric span { max-width: 195px; color: #bdb3c0; font-size: 11px; line-height: 1.42; }
-.impact-card-slot { --impact-card-lift: 68px; position: relative; grid-column: 2; grid-row: 1; height: 460px; min-width: 0; }
+.impact-card-slot { --impact-card-lift: 68px; position: relative; grid-column: 2; grid-row: 1; height: 460px; min-width: 0; transform: translate(14px, 16px); }
 .impact-sheet-stack { position: absolute; z-index: 1; right: 0; top: -31px; width: 420px; height: 460px; pointer-events: none; transition: opacity .12s ease; }
 .impact-sheet-stack span { position: absolute; inset: 0; border: 1px solid rgba(226, 190, 239, .08); border-radius: 20px 20px 4px 4px; background: #211923; transform: rotate(3.5deg); transform-origin: center bottom; }
 .impact-sheet-stack span:last-child { background: #29212b; transform: translateY(20px) rotate(-2.1deg); }
@@ -284,7 +284,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .impact-metric { min-height: 118px; padding: 16px 15px 14px; }
   .impact-metric strong { font-size: 38px; }
   .impact-metric span { font-size: 11px; }
-  .impact-card-slot { --impact-card-lift: 62px; height: 430px; }
+  .impact-card-slot { --impact-card-lift: 62px; height: 430px; transform: translate(10px, 14px); }
   .impact-sheet-stack { width: min(390px, calc(100% - 20px)); height: 430px; }
   .impact-sheet { width: min(400px, 100%); height: 430px; padding: 22px 22px 88px; }
   .impact-sheet h2 { font-size: clamp(27px, 3vw, 32px); }
@@ -302,7 +302,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
   .impact-carousel { width: min(calc(100% - 32px), 700px); }
   .impact-slide { grid-template-columns: 150px minmax(0, 430px); gap: 16px; }
-  .impact-card-slot { --impact-card-lift: 72px; grid-column: 2; }
+  .impact-card-slot { --impact-card-lift: 72px; grid-column: 2; transform: translate(8px, 12px); }
   .impact-quote { display: none; }
   .impact-envelope { left: calc(50% + 83px); width: min(420px, calc(100% - 180px)); }
   .steps { grid-template-columns: repeat(2, 1fr); }
@@ -328,7 +328,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .impact-carousel { width: min(100% - 28px, 620px); }
   .impact-viewport { min-height: 870px; }
   .impact-slide { inset: 0; display: flex; flex-direction: column; gap: 0; padding: 0; }
-  .impact-card-slot { --impact-card-lift: 0px; order: 1; width: 100%; height: 520px; }
+  .impact-card-slot { --impact-card-lift: 0px; order: 1; width: 100%; height: 520px; transform: translate(4px, 10px); }
   .impact-sheet-stack { z-index: 0; left: 6%; top: -18px; width: 88%; height: 520px; transform: none; }
   .impact-sheet { width: 100%; height: 520px; min-height: 520px; padding: 22px 20px 115px; }
   .impact-sheet h2 { font-size: clamp(30px, 8.5vw, 43px); }
