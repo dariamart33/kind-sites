@@ -71,7 +71,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .stage-glow { position: absolute; inset: 23% 4% -5%; background: radial-gradient(ellipse, rgba(20, 105, 255, .46), rgba(95, 24, 153, .2) 43%, transparent 70%); filter: blur(32px); animation: glowBreath 6s ease-in-out infinite alternate; }
 .chrome-art { position: absolute; inset: -13% -7% -2%; overflow: hidden; transform: translate3d(0, 0, 0) rotateX(1deg); transform-style: preserve-3d; filter: drop-shadow(0 20px 28px rgba(0, 17, 55, .72)); animation: chromeFloat 7s ease-in-out infinite alternate; }
 .chrome-art img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; filter: brightness(.98) contrast(1.04) saturate(1.04); }
-.floating-tag-stack { position: absolute; z-index: 6; top: 0; left: 61%; display: flex; width: 39%; flex-direction: column; align-items: flex-start; gap: clamp(22px, 2.7vw, 36px); pointer-events: none; }
+.floating-tag-stack { position: absolute; z-index: 6; top: 0; left: 92%; display: flex; width: 39%; flex-direction: column; align-items: flex-start; gap: clamp(22px, 2.7vw, 36px); pointer-events: none; }
 .float-tag { position: relative; display: flex; align-items: center; gap: 11px; min-height: 44px; padding: 11px 18px; overflow: hidden; border: 1px solid rgba(226, 184, 247, .2); border-radius: 999px; background: linear-gradient(105deg, rgba(24, 13, 28, .9), rgba(51, 25, 61, .72) 58%, rgba(20, 12, 24, .88)); box-shadow: 0 14px 42px rgba(0,0,0,.42), 0 0 34px rgba(161, 44, 212, .09), inset 0 1px rgba(255,255,255,.065); backdrop-filter: blur(16px) saturate(1.15); color: #d9c9df; font-size: clamp(11px, 1.15vw, 14px); font-weight: 500; letter-spacing: -.01em; line-height: 1; white-space: nowrap; animation: tagFloat 4s ease-in-out infinite alternate; }
 .float-tag::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg, rgba(255,255,255,.045), transparent 31%, rgba(183, 65, 226, .055) 72%, transparent); }
 .float-tag b { position: relative; z-index: 1; min-width: 15px; color: #b921ff; font-size: 18px; line-height: 1; text-align: center; text-shadow: 0 0 16px rgba(190, 45, 255, .7); }
@@ -303,6 +303,12 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 }
 
 @media (max-width: 1200px) {
+  .chrome-art { right: 12%; }
+  .floating-tag-stack { left: 88%; }
+  .float-tag { min-height: 38px; padding: 9px 13px; font-size: 11px; }
+  .float-tag b { min-width: 13px; font-size: 15px; }
+  .tag-b { margin-left: 20px; }
+  .tag-c { margin-left: 8px; }
   .impact-showcase { min-height: 760px; }
   .impact-carousel { width: min(calc(100% - 44px), 1150px); }
   .impact-viewport { min-height: 660px; }
@@ -323,6 +329,11 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .impact-envelope { bottom: 28px; width: min(470px, 42vw); height: 220px; }
   .impact-controls { bottom: 94px; }
   .impact-controls button { width: 42px; font-size: 19px; }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .chrome-art { right: 16%; }
+  .floating-tag-stack { left: 85%; }
 }
 
 @media (max-width: 900px) {
