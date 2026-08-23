@@ -17,31 +17,37 @@ const benefits = [
     title: "Не шаблон",
     text: "Каждый проект начинается с вашей задачи и собирается вокруг неё — от структуры до последней детали.",
     result: "Сайт выглядит как ваш бренд, а не как ещё одна готовая тема.",
+    artwork: "/benefit-chrome-custom.webp",
   },
   {
     title: "Один контакт",
     text: "Вам не нужно координировать дизайнера, разработчика и редактора: весь путь ведёт одна команда.",
     result: "Вы всегда знаете, кому написать и какой шаг будет следующим.",
+    artwork: "/benefit-chrome-contact.webp",
   },
   {
     title: "Без пропасти",
     text: "Показываем промежуточный результат, объясняем решения и не исчезаем до даты сдачи.",
     result: "Проект остаётся понятным и управляемым на каждом этапе.",
+    artwork: "/benefit-chrome-process.webp",
   },
   {
     title: "Помощь с текстом",
     text: "Не ждём идеальных материалов: задаём вопросы, собираем смысл и помогаем сказать главное.",
     result: "Страница говорит ясно, живо и без канцелярита.",
+    artwork: "/benefit-chrome-copy.webp",
   },
   {
     title: "Можно расти",
     text: "Закладываем аккуратную основу, которую можно развивать без полной пересборки проекта.",
     result: "Новые страницы и функции добавляются по мере роста бизнеса.",
+    artwork: "/benefit-chrome-growth.webp",
   },
   {
     title: "Готово к запуску",
     text: "Проверяем мобильную версию, формы, ссылки, аналитику и подключаем ваш домен.",
     result: "Вы получаете не макет, а опубликованный работающий сайт.",
+    artwork: "/benefit-chrome-launch.webp",
   },
 ];
 
@@ -205,7 +211,7 @@ export function BenefitsCarousel() {
 
               <div className="benefit-chrome" aria-hidden="true">
                 {/* eslint-disable-next-line @next/next/no-img-element -- Static GitHub Pages asset. */}
-                <img src="/ks-chrome-ribbon-v1.webp" alt="" />
+                <img src={benefit.artwork} alt="" />
               </div>
             </article>
           );
