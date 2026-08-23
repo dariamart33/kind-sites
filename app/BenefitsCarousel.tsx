@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  type CSSProperties,
+  type KeyboardEvent,
+  type PointerEvent as ReactPointerEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type Direction = "next" | "previous";
 type CardPosition = "far-previous" | "previous" | "active" | "next" | "far-next" | "hidden";
@@ -80,7 +87,11 @@ function movingPosition(position: CardPosition, direction: Direction | null): Ca
 export function BenefitsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [movement, setMovement] = useState<Direction | null>(null);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const timerRef = useRef<number | null>(null);
+  const dragStartRef = useRef<number | null>(null);
+  const pointerIdRef = useRef<number | null>(null);
 
   useEffect(() => () => {
     if (timerRef.current !== null) window.clearTimeout(timerRef.current);
@@ -100,6 +111,55 @@ export function BenefitsCarousel() {
     }, 760);
   };
 
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (movement !== null) return;
+
+    dragStartRef.current = event.clientX;
+    pointerIdRef.current = event.pointerId;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    setIsDragging(true);
+  };
+
+  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (pointerIdRef.current !== event.pointerId || dragStartRef.current === null) return;
+
+    const distance = event.clientX - dragStartRef.current;
+    setDragOffset(Math.max(-120, Math.min(120, distance)));
+  };
+
+  const finishPointer = (event: ReactPointerEvent<HTMLDivElement>, cancelled = false) => {
+    if (pointerIdRef.current !== event.pointerId || dragStartRef.current === null) return;
+
+    const distance = event.clientX - dragStartRef.current;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+
+    dragStartRef.current = null;
+    pointerIdRef.current = null;
+    setIsDragging(false);
+    setDragOffset(0);
+
+    if (!cancelled && Math.abs(distance) >= 48) {
+      move(distance < 0 ? "next" : "previous");
+    }
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      move("previous");
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      move("next");
+    }
+  };
+
+  const stageStyle = {
+    "--benefits-drag": `${dragOffset}px`,
+  } as CSSProperties;
+
   return (
     <section className="benefits-showcase reveal" aria-labelledby="benefits-title">
       <div className="benefits-header shell">
@@ -107,14 +167,25 @@ export function BenefitsCarousel() {
           <p className="kicker soft-pill">Наши преимущества</p>
           <h2 id="benefits-title">Почему стоит<br />выбрать <em>KIND SITES?</em></h2>
         </div>
-
-        <div className="benefits-controls" aria-label="Переключение преимуществ">
-          <button type="button" onClick={() => move("previous")} disabled={movement !== null} aria-label="Предыдущее преимущество">←</button>
-          <button type="button" onClick={() => move("next")} disabled={movement !== null} aria-label="Следующее преимущество">→</button>
-        </div>
       </div>
 
-      <div className="benefits-stage">
+      <div
+        className={`benefits-stage${isDragging ? " is-dragging" : ""}`}
+        style={stageStyle}
+        role="slider"
+        tabIndex={0}
+        aria-orientation="horizontal"
+        aria-valuemin={1}
+        aria-valuemax={benefits.length}
+        aria-valuenow={activeIndex + 1}
+        aria-valuetext={benefits[activeIndex].title}
+        aria-label="Преимущества KIND SITES. Проведите влево или вправо, чтобы листать карточки."
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={finishPointer}
+        onPointerCancel={(event) => finishPointer(event, true)}
+        onKeyDown={handleKeyDown}
+      >
         {benefits.map((benefit, index) => {
           const position = movingPosition(basePosition(index, activeIndex), movement);
           const isActive = position === "active";

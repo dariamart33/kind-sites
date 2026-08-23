@@ -177,21 +177,19 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .sphere-copy h2 { margin: 20px 0 29px; font-size: clamp(42px, 5vw, 70px); line-height: .93; }
 
 .benefits-showcase { position: relative; min-height: 960px; overflow: hidden; padding-top: 92px; background: radial-gradient(circle at 50% 100%, rgba(98, 25, 121, .17), transparent 37%), radial-gradient(circle at 78% 24%, rgba(82, 23, 101, .1), transparent 29%), #09050a; }
-.benefits-header { position: relative; z-index: 10; min-height: 360px; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
+.benefits-header { position: relative; z-index: 10; min-height: 360px; }
 .benefits-header h2 { max-width: 630px; margin-top: 36px; padding-bottom: .12em; color: #f3e8fa; background-image: var(--heading-gradient); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: clamp(58px, 6.5vw, 94px); line-height: .92; text-wrap: balance; }
-.benefits-controls { display: flex; gap: 12px; margin-top: 8px; }
-.benefits-controls button { display: grid; width: 54px; aspect-ratio: 1; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; background: #fbf8fc; color: #211525; cursor: pointer; font-size: 24px; transition: transform .22s ease, background .22s ease, box-shadow .22s ease; }
-.benefits-controls button:hover { transform: translateY(-3px); background: white; box-shadow: 0 0 28px rgba(210, 126, 255, .24); }
-.benefits-controls button:focus-visible { outline: 2px solid #d991ff; outline-offset: 4px; }
-.benefits-controls button:disabled { cursor: default; }
-.benefits-stage { position: relative; z-index: 2; width: 100vw; height: 610px; margin: -68px 0 0 calc(50% - 50vw); }
-.benefit-card { position: absolute; top: 0; left: 50%; width: min(480px, 34vw); height: 530px; overflow: hidden; border: 1px solid rgba(235, 216, 241, .14); border-radius: 18px 18px 8px 8px; background: linear-gradient(155deg, rgba(42, 36, 44, .99), rgba(26, 20, 28, .99)); box-shadow: 0 38px 90px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.06); transform: translateX(-50%) rotate(-4.2deg) scale(.94); transform-origin: 50% 100%; opacity: 0; filter: brightness(.48) saturate(.7); transition: left .76s cubic-bezier(.22,.7,.2,1), top .76s cubic-bezier(.22,.7,.2,1), transform .76s cubic-bezier(.22,.7,.2,1), opacity .62s ease, filter .62s ease; pointer-events: none; }
-.benefit-card.is-active { z-index: 5; top: 0; left: 50%; opacity: 1; filter: none; transform: translateX(-50%) rotate(-4.2deg) scale(1); }
+.benefits-stage { position: relative; z-index: 2; width: 100vw; height: 610px; margin: -68px 0 0 calc(50% - 50vw); touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; outline: none; }
+.benefits-stage:focus-visible { outline: 1px solid rgba(217, 145, 255, .55); outline-offset: -6px; }
+.benefits-stage.is-dragging { cursor: grabbing; }
+.benefits-stage.is-dragging .benefit-card { transition: none; }
+.benefit-card { position: absolute; top: 0; left: 50%; width: min(480px, 34vw); height: 530px; overflow: hidden; border: 1px solid rgba(235, 216, 241, .14); border-radius: 18px 18px 8px 8px; background: linear-gradient(158deg, rgba(43, 37, 45, .99) 0%, rgba(34, 28, 36, .99) 48%, #09070b 100%); box-shadow: 0 38px 90px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.06); transform: translateX(calc(-50% + var(--benefits-drag, 0px))) rotate(-4.2deg) scale(.94); transform-origin: 50% 100%; opacity: 0; filter: brightness(.48) saturate(.7); transition: left .76s cubic-bezier(.22,.7,.2,1), top .76s cubic-bezier(.22,.7,.2,1), transform .76s cubic-bezier(.22,.7,.2,1), opacity .62s ease, filter .62s ease; pointer-events: none; }
+.benefit-card.is-active { z-index: 5; top: 0; left: 50%; opacity: 1; filter: none; transform: translateX(calc(-50% + var(--benefits-drag, 0px))) rotate(-4.2deg) scale(1); }
 .benefit-card.is-previous { z-index: 3; top: 126px; left: 17%; opacity: .34; }
 .benefit-card.is-next { z-index: 3; top: 82px; left: 83%; opacity: .38; }
-.benefit-card.is-far-previous { z-index: 1; top: 175px; left: -16%; transform: translateX(-50%) rotate(-4.2deg) scale(.88); }
-.benefit-card.is-far-next { z-index: 1; top: 145px; left: 116%; transform: translateX(-50%) rotate(-4.2deg) scale(.88); }
-.benefit-card.is-hidden { z-index: 0; top: 175px; opacity: 0; transform: translateX(-50%) rotate(-4.2deg) scale(.82); }
+.benefit-card.is-far-previous { z-index: 1; top: 175px; left: -16%; transform: translateX(calc(-50% + var(--benefits-drag, 0px))) rotate(-4.2deg) scale(.88); }
+.benefit-card.is-far-next { z-index: 1; top: 145px; left: 116%; transform: translateX(calc(-50% + var(--benefits-drag, 0px))) rotate(-4.2deg) scale(.88); }
+.benefit-card.is-hidden { z-index: 0; top: 175px; opacity: 0; transform: translateX(calc(-50% + var(--benefits-drag, 0px))) rotate(-4.2deg) scale(.82); }
 .benefit-card-copy { position: relative; z-index: 3; padding: 30px 30px 0; }
 .benefit-number { display: block; margin-bottom: 24px; color: rgba(226, 181, 244, .62); font-size: 10px; font-weight: 700; letter-spacing: .13em; }
 .benefit-card h3 { color: #fffaff; font-size: clamp(27px, 2.4vw, 38px); font-weight: 600; line-height: 1.04; letter-spacing: -.035em; }
@@ -199,9 +197,9 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .benefit-result { display: grid; gap: 7px; margin-top: 24px; padding: 15px 17px; border: 1px solid rgba(255,255,255,.04); border-radius: 10px; background: rgba(255,255,255,.045); }
 .benefit-result b { color: #e4dce7; font-size: 12px; }
 .benefit-result span { color: #c8becb; font-size: 12px; line-height: 1.45; }
-.benefit-chrome { position: absolute; z-index: 1; right: -4%; bottom: -44px; left: -4%; height: 260px; overflow: hidden; }
-.benefit-chrome::before { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: linear-gradient(180deg, #211a2300 0%, #211a2300 58%, rgba(18, 12, 20, .5) 100%); }
-.benefit-chrome img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 68%; filter: contrast(1.04) brightness(.96) saturate(1.04); }
+.benefit-chrome { position: absolute; z-index: 1; right: -4%; bottom: -38px; left: -4%; height: 275px; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.38) 16%, #000 35%, #000 100%); mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.38) 16%, #000 35%, #000 100%); }
+.benefit-chrome::before { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 58%, rgba(10, 7, 12, .42) 100%); }
+.benefit-chrome img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 68%; mix-blend-mode: screen; opacity: .96; filter: contrast(1.08) brightness(1.02) saturate(1.05); }
 .benefits-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .case-study { background: radial-gradient(circle at 74% 46%, rgba(159,37,201,.24), transparent 34%), #100812; }
@@ -380,8 +378,6 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .benefits-showcase { min-height: 860px; padding-top: 70px; }
   .benefits-header { min-height: 340px; }
   .benefits-header h2 { max-width: 520px; margin-top: 27px; font-size: clamp(49px, 11vw, 68px); }
-  .benefits-controls { margin-top: 4px; }
-  .benefits-controls button { width: 48px; font-size: 21px; }
   .benefits-stage { height: 535px; margin-top: -52px; }
   .benefit-card { width: min(430px, 76vw); height: 490px; }
   .benefit-card.is-previous { top: 94px; left: -4%; opacity: .2; }
@@ -410,9 +406,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .service-grid article { min-height: 155px; }
   .steps article, .steps article:last-child { grid-column: auto; min-height: 210px; }
   .benefits-showcase { min-height: 820px; padding-top: 62px; }
-  .benefits-header { min-height: 330px; display: block; }
+  .benefits-header { min-height: 330px; }
   .benefits-header h2 { margin-top: 24px; font-size: clamp(45px, 13vw, 59px); }
-  .benefits-controls { margin-top: 22px; }
   .benefits-stage { height: 500px; margin-top: -45px; }
   .benefit-card { width: 88vw; max-width: 390px; height: 460px; }
   .benefit-card.is-previous { left: -18%; }
