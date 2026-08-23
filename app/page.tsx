@@ -1,3 +1,4 @@
+import { BenefitsCarousel } from "./BenefitsCarousel";
 import { ImpactCarousel } from "./ImpactCarousel";
 
 const services = [
@@ -37,15 +38,6 @@ const packages = [
     price: "от 100 000 ₽",
     details: ["сценарий под задачу", "интерактив и интеграции", "понятная смета до старта", "поддержка после запуска"],
   },
-];
-
-const benefits = [
-  { symbol: "K", title: "Не шаблон", text: "Каждый проект начинается с вашей задачи и собирается вокруг неё." },
-  { symbol: "01", title: "Один контакт", text: "Вы всегда понимаете, кому написать и что сейчас происходит с проектом." },
-  { symbol: "↗", title: "Без пропасти", text: "Показываем промежуточный результат и не исчезаем до даты сдачи." },
-  { symbol: "Aa", title: "Помощь с текстом", text: "Не ждём идеальных материалов — помогаем сделать их понятными." },
-  { symbol: "∞", title: "Можно расти", text: "Закладываем аккуратную основу, которую можно развивать дальше." },
-  { symbol: "✓", title: "Готово к запуску", text: "Передаём не макет, а опубликованный и проверенный сайт." },
 ];
 
 const questions = [
@@ -113,10 +105,7 @@ export default function Home() {
 
       <section className="sphere-cta reveal"><div className="sphere sphere-small" /><div className="sphere-copy"><p className="kicker soft-pill">Начать просто</p><h2>Расскажите, какой сайт<br />вам нужен</h2><ArrowButton href="#contact">Обсудить идею</ArrowButton></div></section>
 
-      <section className="section benefits shell reveal">
-        <div className="split-heading"><div><p className="kicker soft-pill">Почему KIND SITES</p><h2>Красиво снаружи.<br /><em>Продуманно внутри.</em></h2></div><p>Дизайн должен производить впечатление, а сайт — помогать человеку сделать следующий шаг.</p></div>
-        <div className="benefit-list">{benefits.map((item) => <article key={item.title}><span className="metal-icon">{item.symbol}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div>
-      </section>
+      <BenefitsCarousel />
 
       <section className="section case-study reveal">
         <div className="shell"><div className="case-heading"><p className="kicker soft-pill">Первый кейс</p><h2>История, которая<br /><em>стала сайтом.</em></h2></div>
