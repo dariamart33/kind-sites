@@ -76,14 +76,16 @@ function SlideContent({ slide, state, direction }: { slide: ImpactSlide; state: 
         ))}
       </aside>
 
-      <div className="impact-sheet-stack" aria-hidden="true"><span /><span /></div>
+      <div className="impact-card-slot">
+        <div className="impact-sheet-stack" aria-hidden="true"><span /><span /></div>
 
-      <article className="impact-sheet">
-        <div className="impact-tags">{slide.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-        <h2>{slide.title}</h2>
-        <div className="impact-copy-block"><b>Задача:</b><p>{slide.challenge}</p></div>
-        <div className="impact-copy-block"><b>Как работаем:</b><p>{slide.solution}</p></div>
-      </article>
+        <article className="impact-sheet">
+          <div className="impact-tags">{slide.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          <h2>{slide.title}</h2>
+          <div className="impact-copy-block"><b>Задача:</b><p>{slide.challenge}</p></div>
+          <div className="impact-copy-block"><b>Как работаем:</b><p>{slide.solution}</p></div>
+        </article>
+      </div>
 
       <blockquote className="impact-quote">
         <span aria-hidden="true">“</span>
