@@ -76,9 +76,11 @@ export default function Home() {
             {/* eslint-disable-next-line @next/next/no-img-element -- GitHub Pages serves the pre-compressed hero asset directly. */}
             <img src="/ks-purple-glass-v2.webp" alt="" />
           </div>
-          <span className="float-tag tag-a"><b>✦</b> дизайн без шаблонов</span>
-          <span className="float-tag tag-b"><b>↗</b> запуск под ключ</span>
-          <span className="float-tag tag-c"><b>✓</b> понятный процесс</span>
+          <div className="floating-tag-stack">
+            <span className="float-tag tag-a"><b aria-hidden="true">✦</b> дизайн без шаблонов</span>
+            <span className="float-tag tag-b"><b aria-hidden="true">✓</b> понятный процесс</span>
+            <span className="float-tag tag-c"><b className="tag-rocket" aria-hidden="true">➤</b> запуск под ключ</span>
+          </div>
         </div>
 
         <div className="ticker" aria-label="Направления работы"><div>
