@@ -128,7 +128,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .impact-copy-block { position: relative; z-index: 2; margin-top: 19px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.1); }
 .impact-copy-block b { color: #dfb8ed; font-size: 12px; font-weight: 600; }
 .impact-copy-block p { margin: 8px 0 0; color: #eee8f0; font-size: 11px; line-height: 1.45; }
-.impact-quote { align-self: start; margin: 42px 0 0; padding: 27px 27px 30px; border: 1px solid rgba(224, 174, 255, .14); border-radius: 19px; background: linear-gradient(145deg, rgba(37, 27, 40, .97), rgba(31, 22, 34, .96)); box-shadow: 0 28px 80px rgba(0,0,0,.28); transform: rotate(.45deg); }
+.impact-quote { --impact-quote-offset: 32px; align-self: start; margin: 42px 0 0; padding: 27px 27px 30px; border: 1px solid rgba(224, 174, 255, .14); border-radius: 19px; background: linear-gradient(145deg, rgba(37, 27, 40, .97), rgba(31, 22, 34, .96)); box-shadow: 0 28px 80px rgba(0,0,0,.28); transform: translateX(var(--impact-quote-offset)) rotate(.45deg); }
 .impact-quote > span { display: grid; width: 52px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: rgba(191, 139, 211, .08); color: #aa9aac; font-family: Georgia, serif; font-size: 34px; line-height: 1; }
 .impact-quote p { margin: 27px 0 0; color: #f2ebf3; font-size: 14px; font-weight: 600; line-height: 1.48; }
 .impact-envelope { position: absolute; z-index: 5; left: 50%; bottom: 28px; width: min(535px, 42vw); height: 250px; transform: translateX(-50%); overflow: hidden; border: 1px solid rgba(229, 177, 255, .11); border-top-color: rgba(229, 177, 255, .06); border-radius: 3px 3px 8px 8px; background: transparent; filter: drop-shadow(0 -12px 36px rgba(118, 45, 142, .06)); }
@@ -260,8 +260,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 }
 @keyframes impactSideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 @keyframes impactSideOut { to { opacity: 0; transform: translateY(-12px); } }
-@keyframes impactQuoteIn { from { opacity: 0; transform: translate(12px, 8px) rotate(.8deg); } to { opacity: 1; transform: rotate(.45deg); } }
-@keyframes impactQuoteOut { to { opacity: 0; transform: translateY(-12px) rotate(.2deg); } }
+@keyframes impactQuoteIn { from { opacity: 0; transform: translate(calc(var(--impact-quote-offset) + 12px), 8px) rotate(.8deg); } to { opacity: 1; transform: translateX(var(--impact-quote-offset)) rotate(.45deg); } }
+@keyframes impactQuoteOut { to { opacity: 0; transform: translate(var(--impact-quote-offset), -12px) rotate(.2deg); } }
 @keyframes ambientShift { to { transform: translate3d(10vw, 7vw, 0) scale(1.18); opacity: .29; } }
 @keyframes glowBreath { to { transform: scale(1.08); opacity: .75; } }
 @keyframes chromeFloat { to { transform: translate3d(0, -17px, 32px) rotateX(-1deg) rotateZ(.6deg); } }
@@ -290,7 +290,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .impact-sheet h2 { font-size: clamp(27px, 3vw, 32px); }
   .impact-copy-block { margin-top: 17px; padding-top: 14px; }
   .impact-copy-block p { font-size: 11px; }
-  .impact-quote { margin-top: 38px; padding: 22px; }
+  .impact-quote { --impact-quote-offset: 22px; margin-top: 38px; padding: 22px; }
   .impact-quote > span { width: 46px; font-size: 30px; }
   .impact-quote p { margin-top: 22px; font-size: 13px; }
   .impact-envelope { bottom: 28px; width: min(470px, 42vw); height: 220px; }
