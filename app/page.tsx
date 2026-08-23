@@ -105,8 +105,6 @@ export default function Home() {
         <div className="steps">{steps.map((step) => <article key={step.number}><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></article>)}</div>
       </section>
 
-      <section className="sphere-cta reveal"><div className="sphere sphere-small" /><div className="sphere-copy"><p className="kicker soft-pill">Начать просто</p><h2>Расскажите, какой сайт<br />вам нужен</h2><ArrowButton href="#contact">Обсудить идею</ArrowButton></div></section>
-
       <BenefitsCarousel />
 
       <section className="section case-study reveal">
