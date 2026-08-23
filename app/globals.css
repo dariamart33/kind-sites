@@ -134,7 +134,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .envelope-left { clip-path: polygon(0 0, 50% 37%, 50% 100%, 0 100%); background: linear-gradient(35deg, rgba(22, 13, 25, .98), rgba(42, 27, 47, .9)); border-right: 1px solid rgba(229, 177, 255, .1); }
 .envelope-right { clip-path: polygon(100% 0, 50% 37%, 50% 100%, 100% 100%); background: linear-gradient(-35deg, rgba(18, 11, 21, .99), rgba(38, 24, 43, .88)); border-left: 1px solid rgba(229, 177, 255, .09); }
 .envelope-center { clip-path: polygon(0 100%, 50% 37%, 100% 100%); background: linear-gradient(180deg, rgba(43, 27, 48, .94), rgba(15, 9, 18, .99)); border-top: 1px solid rgba(229, 177, 255, .12); }
-.impact-controls { position: absolute; z-index: 8; left: 50%; bottom: -18px; display: flex; gap: 13px; transform: translateX(-50%); }
+.impact-controls { position: absolute; z-index: 8; left: 50%; bottom: 30px; display: flex; gap: 13px; transform: translateX(-50%); }
 .impact-controls button { display: grid; width: 62px; aspect-ratio: 1; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.62); border-radius: 50%; background: rgba(235, 225, 239, .62); color: #302632; cursor: pointer; font: inherit; font-size: 27px; transition: transform .2s ease, background .2s ease, color .2s ease; }
 .impact-controls button:last-child { background: #fbf8fc; color: #211525; box-shadow: 0 0 24px rgba(234, 194, 255, .2); }
 .impact-controls button:hover { transform: translateY(-3px); background: white; color: #170d1a; }
@@ -279,7 +279,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .impact-quote > span { width: 52px; font-size: 34px; }
   .impact-quote p { margin-top: 25px; font-size: 14px; }
   .impact-envelope { bottom: 18px; width: min(650px, 54vw); height: 340px; }
-  .impact-controls { bottom: 54px; }
+  .impact-controls { bottom: 100px; }
   .impact-controls button { width: 52px; font-size: 23px; }
 }
 
@@ -323,7 +323,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
   .impact-metric { min-height: 140px; scroll-snap-align: start; }
   .impact-quote { display: none; }
   .impact-envelope { left: 50%; top: 460px; bottom: auto; width: 100%; height: 235px; }
-  .impact-controls { top: 620px; bottom: auto; }
+  .impact-controls { top: 585px; bottom: auto; }
   .impact-progress { bottom: -12px; }
   .sphere-small { top: 20px; }
   .sphere-copy { padding-top: 56px; }
