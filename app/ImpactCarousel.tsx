@@ -76,6 +76,8 @@ function SlideContent({ slide, state, direction }: { slide: ImpactSlide; state: 
         ))}
       </aside>
 
+      <div className="impact-sheet-stack" aria-hidden="true"><span /><span /></div>
+
       <article className="impact-sheet">
         <div className="impact-tags">{slide.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
         <h2>{slide.title}</h2>
