@@ -111,7 +111,7 @@ export function ImpactCarousel() {
     setDirection(step === 1 ? "next" : "previous");
     setLeavingIndex(activeIndex);
     setActiveIndex((current) => (current + step + impactSlides.length) % impactSlides.length);
-    timerRef.current = window.setTimeout(() => setLeavingIndex(null), 500);
+    timerRef.current = window.setTimeout(() => setLeavingIndex(null), 900);
   };
 
   return (
