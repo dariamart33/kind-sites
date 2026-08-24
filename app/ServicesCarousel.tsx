@@ -11,7 +11,8 @@ const services = [
   {
     title: "Дизайн с характером",
     text: "Создаём визуальный язык под ваш бренд, а не подгоняем бизнес под готовый шаблон.",
-    artwork: "/service-design-v1.webp",
+    artwork: "/service-design-v2.webp",
+    motion: "design",
   },
   {
     title: "Разработка",
@@ -22,7 +23,8 @@ const services = [
   {
     title: "Анимация",
     text: "Добавляем движение там, где оно усиливает историю и помогает вести взгляд пользователя.",
-    artwork: "/service-animation-v1.webp",
+    artwork: "/service-animation-v2.webp",
+    motion: "animation",
   },
   {
     title: "Запуск",
@@ -90,7 +92,7 @@ export function ServicesCarousel() {
 
           return (
             <article
-              className={`benefit-card service-card is-${position}${service.hasMatrix ? " has-matrix" : ""}`}
+              className={`benefit-card service-card is-${position}${service.hasMatrix ? " has-matrix" : ""}${service.motion ? ` has-${service.motion}-motion` : ""}`}
               key={service.title}
               aria-hidden={!isActive}
             >
@@ -108,6 +110,21 @@ export function ServicesCarousel() {
                     {matrixColumns.map((column, columnIndex) => (
                       <span key={columnIndex}>{column}</span>
                     ))}
+                  </div>
+                )}
+                {service.motion === "design" && (
+                  <div className="service-design-motion">
+                    <span className="design-control-node node-one" />
+                    <span className="design-control-node node-two" />
+                    <span className="design-control-node node-three" />
+                    <span className="design-cursor-glow" />
+                  </div>
+                )}
+                {service.motion === "animation" && (
+                  <div className="service-animation-motion">
+                    <span className="animation-keyframe keyframe-one" />
+                    <span className="animation-keyframe keyframe-two" />
+                    <span className="animation-playhead" />
                   </div>
                 )}
               </div>

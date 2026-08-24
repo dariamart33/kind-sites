@@ -207,6 +207,19 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 .service-matrix span:nth-child(5) { left: 74%; animation-delay: -3.1s; animation-duration: 4.3s; }
 .service-matrix span:nth-child(6) { left: 90%; animation-delay: -1.8s; animation-duration: 5s; }
 .service-card:not(.is-active) .service-matrix span { animation-play-state: paused; }
+.service-design-motion, .service-animation-motion { position: absolute; z-index: 2; inset: 0; }
+.design-control-node { position: absolute; width: 11px; aspect-ratio: 1; border: 1px solid rgba(255, 235, 255, .92); border-radius: 50%; background: #cd5cff; box-shadow: 0 0 0 4px rgba(199, 66, 255, .12), 0 0 16px #c735ff; opacity: .58; animation: serviceDesignNodePulse 2.8s ease-in-out infinite; }
+.design-control-node.node-one { left: 47%; top: 37%; animation-delay: -.4s; }
+.design-control-node.node-two { left: 42%; top: 54%; animation-delay: -1.3s; }
+.design-control-node.node-three { left: 58%; top: 69%; animation-delay: -2.1s; }
+.design-cursor-glow { position: absolute; left: 44%; top: 50%; width: 10px; aspect-ratio: 1; border-radius: 50%; background: #fff6ff; box-shadow: 0 0 8px #fff, 0 0 18px #d535ff, 0 0 34px rgba(205, 53, 255, .8); opacity: 0; animation: serviceDesignCursor 4.8s cubic-bezier(.45,0,.3,1) infinite; }
+.service-animation-motion::before { content: ""; position: absolute; left: 21%; top: 58%; width: 13%; height: 2px; border-radius: 999px; background: linear-gradient(90deg, transparent, #fff, #d753ff, transparent); box-shadow: 0 0 12px #d13bff; opacity: 0; transform: rotate(14deg); animation: serviceAnimationTrail 4.4s ease-in-out infinite; }
+.animation-keyframe { position: absolute; width: 10px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.86); background: #ca4cff; box-shadow: 0 0 14px #d84eff; opacity: .5; transform: rotate(45deg); animation: serviceAnimationKeyframe 2.2s ease-in-out infinite; }
+.animation-keyframe.keyframe-one { left: 32%; top: 57%; animation-delay: -.35s; }
+.animation-keyframe.keyframe-two { left: 61%; top: 72%; animation-delay: -1.2s; }
+.animation-playhead { position: absolute; left: 22%; top: 56%; width: 9px; aspect-ratio: 1; border-radius: 50%; background: #fff; box-shadow: 0 0 8px #fff, 0 0 18px #e357ff, 0 0 30px #ae20ed; opacity: 0; animation: serviceAnimationPlayhead 4.4s cubic-bezier(.4,0,.22,1) infinite; }
+.service-card:not(.is-active) :is(.design-control-node, .design-cursor-glow, .animation-keyframe, .animation-playhead),
+.service-card:not(.is-active) .service-animation-motion::before { animation-play-state: paused; }
 
 .case-study { background: radial-gradient(circle at 74% 46%, rgba(159,37,201,.24), transparent 34%), #100812; }
 .case-heading { max-width: 680px; margin: 0 auto 55px; text-align: center; }
@@ -298,6 +311,11 @@ h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
 @keyframes tagFloat { to { transform: translateY(-12px) rotate(-1deg); } }
 @keyframes tickerMove { to { transform: translateX(-50%); } }
 @keyframes serviceMatrixFall { from { transform: translateY(0); opacity: 0; } 8% { opacity: 1; } 88% { opacity: 1; } to { transform: translateY(650px); opacity: 0; } }
+@keyframes serviceDesignNodePulse { 0%, 100% { opacity: .42; transform: scale(.78); } 48% { opacity: .95; transform: scale(1.28); } }
+@keyframes serviceDesignCursor { 0%, 14%, 100% { left: 44%; top: 50%; opacity: 0; } 23% { opacity: 1; } 42% { left: 51%; top: 42%; opacity: 1; } 65% { left: 58%; top: 57%; opacity: 1; } 82% { left: 55%; top: 69%; opacity: .9; } 90% { opacity: 0; } }
+@keyframes serviceAnimationTrail { 0%, 16%, 100% { left: 20%; opacity: 0; } 28% { opacity: .9; } 74% { left: 70%; opacity: .75; } 86% { left: 78%; opacity: 0; } }
+@keyframes serviceAnimationKeyframe { 0%, 100% { opacity: .38; transform: rotate(45deg) scale(.78); } 50% { opacity: 1; transform: rotate(45deg) scale(1.22); } }
+@keyframes serviceAnimationPlayhead { 0%, 15%, 100% { left: 22%; top: 56%; opacity: 0; } 24% { opacity: 1; } 47% { left: 43%; top: 62%; opacity: 1; } 72% { left: 63%; top: 72%; opacity: 1; } 86% { left: 78%; top: 68%; opacity: 0; } }
 @keyframes spherePulse { to { filter: brightness(1.16); transform: translateX(-50%) scale(1.025); } }
 @keyframes ringFloat { to { transform: translate(-14px, 18px) rotate(8deg); } }
 @keyframes revealUp { from { opacity: 0; transform: translateY(55px); } to { opacity: 1; transform: none; } }
