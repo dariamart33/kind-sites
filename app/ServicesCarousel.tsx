@@ -23,7 +23,7 @@ const services = [
   {
     title: "Анимация",
     text: "Добавляем движение там, где оно усиливает историю и помогает вести взгляд пользователя.",
-    artwork: "/service-animation-v2.webp",
+    artwork: "/service-animation-v3.webp",
     motion: "animation",
   },
   {
@@ -122,8 +122,9 @@ export function ServicesCarousel() {
                 )}
                 {service.motion === "animation" && (
                   <div className="service-animation-motion">
-                    <span className="animation-keyframe keyframe-one" />
-                    <span className="animation-keyframe keyframe-two" />
+                    <span className="animation-orb orb-one" />
+                    <span className="animation-orb orb-two" />
+                    <span className="animation-orb orb-three" />
                     <span className="animation-playhead" />
                   </div>
                 )}

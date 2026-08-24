@@ -38,7 +38,7 @@ test("server-renders the KIND SITES landing page", async () => {
   assert.match(html, /Направления работы KIND SITES/);
   assert.match(html, /service-development-v1\.webp/);
   assert.match(html, /service-design-v2\.webp/);
-  assert.match(html, /service-animation-v2\.webp/);
+  assert.match(html, /service-animation-v3\.webp/);
   assert.match(html, /service-matrix/);
   assert.match(html, /service-design-motion/);
   assert.match(html, /service-animation-motion/);
