@@ -10,18 +10,26 @@
     "file": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
     "name": "rolldown-runtime"
   },
-  "app/BenefitsCarousel.tsx": {
-    "file": "_next/static/chunks/BenefitsCarousel-ALYWVQV6.js",
-    "name": "BenefitsCarousel",
-    "src": "app/BenefitsCarousel.tsx",
-    "isDynamicEntry": true,
+  "_useStackCarousel-CCsG1Cfn.js": {
+    "file": "_next/static/chunks/useStackCarousel-CCsG1Cfn.js",
+    "name": "useStackCarousel",
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
       "_framework-BgSIrAUN.js"
     ]
   },
+  "app/BenefitsCarousel.tsx": {
+    "file": "_next/static/chunks/BenefitsCarousel-DseSa1No.js",
+    "name": "BenefitsCarousel",
+    "src": "app/BenefitsCarousel.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_useStackCarousel-CCsG1Cfn.js",
+      "_framework-BgSIrAUN.js"
+    ]
+  },
   "app/ImpactCarousel.tsx": {
-    "file": "_next/static/chunks/ImpactCarousel-CmUiQXHq.js",
+    "file": "_next/static/chunks/ImpactCarousel-CH3kfWlE.js",
     "name": "ImpactCarousel",
     "src": "app/ImpactCarousel.tsx",
     "isDynamicEntry": true,
@@ -30,8 +38,18 @@
       "_framework-BgSIrAUN.js"
     ]
   },
+  "app/ServicesCarousel.tsx": {
+    "file": "_next/static/chunks/ServicesCarousel-5sMATMQl.js",
+    "name": "ServicesCarousel",
+    "src": "app/ServicesCarousel.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_useStackCarousel-CCsG1Cfn.js",
+      "_framework-BgSIrAUN.js"
+    ]
+  },
   "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_93f6fd6c708956198cb05a5cfe3fd3ab/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-CXWB0Tz-.js",
+    "file": "_next/static/chunks/layout-segment-context-o0OsSMJy.js",
     "name": "layout-segment-context",
     "src": "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_93f6fd6c708956198cb05a5cfe3fd3ab/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -42,7 +60,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-B68Nmpqf.js",
+    "file": "_next/static/chunks/index-DbvhtF4g.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -54,7 +72,8 @@
       "app/BenefitsCarousel.tsx",
       "virtual:vinext-app-browser-entry",
       "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_93f6fd6c708956198cb05a5cfe3fd3ab/node_modules/vinext/dist/shims/layout-segment-context.js",
-      "app/ImpactCarousel.tsx"
+      "app/ImpactCarousel.tsx",
+      "app/ServicesCarousel.tsx"
     ]
   }
 }

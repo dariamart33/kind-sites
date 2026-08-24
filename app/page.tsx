@@ -1,14 +1,6 @@
 import { BenefitsCarousel } from "./BenefitsCarousel";
 import { ImpactCarousel } from "./ImpactCarousel";
-
-const services = [
-  { icon: "✦", title: "Структура и смыслы", text: "Собираем логику страницы и помогаем сформулировать главное без канцелярита." },
-  { icon: "◌", title: "Дизайн с характером", text: "Создаём визуальный язык под ваш бренд, а не подгоняем бизнес под готовый шаблон." },
-  { icon: "↗", title: "Разработка", text: "Собираем быстрый адаптивный сайт, который одинаково хорошо работает на телефоне и компьютере." },
-  { icon: "◎", title: "Анимация", text: "Добавляем движение там, где оно усиливает историю и помогает вести взгляд пользователя." },
-  { icon: "⌁", title: "Запуск", text: "Подключаем домен, формы и аналитику, проверяем основные сценарии перед публикацией." },
-  { icon: "＋", title: "Поддержка", text: "После запуска остаёмся рядом: объясняем, как всё устроено, и помогаем с обновлениями." },
-];
+import { ServicesCarousel } from "./ServicesCarousel";
 
 const steps = [
   { number: "01", title: "Знакомимся", text: "Коротко обсуждаем бизнес, аудиторию и задачу будущего сайта." },
@@ -89,14 +81,7 @@ export default function Home() {
         </div></div>
       </section>
 
-      <section className="section services shell reveal" id="services">
-        <div className="section-intro split-heading"><div><p className="kicker soft-pill">Что мы делаем</p><h2>Собираем сайт<br /><em>целиком.</em></h2></div><p>От первой мысли и текста до домена, аналитики и кнопки «опубликовать».</p></div>
-        <div className="layered-panel">
-          <div className="panel-shadow shadow-one" /><div className="panel-shadow shadow-two" />
-          <div className="panel-head"><h3>Разработка под ключ</h3><span>06 направлений</span></div>
-          <div className="service-grid">{services.map((item) => <article key={item.title}><span className="service-icon">{item.icon}</span><h4>{item.title}</h4><p>{item.text}</p></article>)}</div>
-        </div>
-      </section>
+      <ServicesCarousel />
 
       <ImpactCarousel />
 
